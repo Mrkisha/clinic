@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<querybuilder version="8.3">
+<source>
+<database charset="latin1" collation="latin1_swedish_ci">mydb</database>
+</source>
+<canvas>
+<table tablename="admission" alias="" left="10" top="21" width="150" height="248" />
+<table tablename="patient" alias="" left="472" top="11" width="150" height="143" />
+<table tablename="wards" alias="" left="219" top="12" width="150" height="68" />
+<table tablename="patientstatus" alias="" left="298" top="187" width="150" height="68" />
+<table tablename="condition" alias="" left="695" top="18" width="150" height="173" />
+<table tablename="sidelist" alias="" left="855" top="18" width="150" height="113" />
+<table tablename="sitelist" alias="" left="1015" top="18" width="150" height="113" />
+<table tablename="diagnoslist" alias="" left="466" top="170" width="150" height="113" />
+<table tablename="comorbidities" alias="" left="198" top="104" width="150" height="113" />
+<join type = "Inner Join">
+<from tablename = "admission" alias = "">Patient_Identifier</from>
+<to tablename = "patient" alias = "">Identifier</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "admission" alias = "">Ward</from>
+<to tablename = "wards" alias = "">WardID</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "admission" alias = "">PatientStatusID</from>
+<to tablename = "patientstatus" alias = "">PatientStatusID</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "condition" alias = "">Patient_Identifier</from>
+<to tablename = "patient" alias = "">Identifier</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "sidelist" alias = "">SidID</from>
+<to tablename = "condition" alias = "">SideID</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "condition" alias = "">SitID</from>
+<to tablename = "sitelist" alias = "">SitListID</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "diagnoslist" alias = "">DiagnListID</from>
+<to tablename = "condition" alias = "">DiagnListID</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "comorbidities" alias = "">Patient_Identifier</from>
+<to tablename = "patient" alias = "">Identifier</to>
+</join>
+</canvas>
+<grid>
+<column id="1">
+<table tablename="wards"></table>
+<field>Ward</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="2">
+<table tablename="admission"></table>
+<field>Bed</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="3">
+<table tablename="patient"></table>
+<field>Surname</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="4">
+<table tablename="patient"></table>
+<field>FirstName</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="5">
+<table tablename="sidelist"></table>
+<field>Sid</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="6">
+<table tablename="sitelist"></table>
+<field>Sit</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="7">
+<table tablename="diagnoslist"></table>
+<field>Diagnos</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="8">
+<table tablename="comorbidities"></table>
+<field>Comorbidity</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="9">
+<table tablename="admission"></table>
+<field>PatientStatusID</field>
+<alias></alias>
+<show>false</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria>=1</criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+</grid>
+</querybuilder>

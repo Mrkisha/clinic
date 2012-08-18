@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<querybuilder version="8.3">
+<source>
+<database charset="latin1" collation="latin1_swedish_ci">mydb</database>
+</source>
+<canvas>
+<table tablename="condition" alias="" left="10" top="21" width="150" height="143" />
+<table tablename="patient" alias="" left="194" top="50" width="150" height="113" />
+<table tablename="procedure" alias="" left="351" top="23" width="150" height="263" />
+<table tablename="staff" alias="surgeon" left="560" top="8" width="150" height="203" />
+<table tablename="staff" alias="assistant" left="720" top="8" width="150" height="113" />
+<table tablename="sidelist" alias="" left="5" top="182" width="150" height="113" />
+<table tablename="sitelist" alias="" left="177" top="181" width="150" height="113" />
+<table tablename="diagnoslist" alias="" left="547" top="142" width="150" height="113" />
+<table tablename="proclist" alias="" left="784" top="179" width="150" height="113" />
+<join type = "Inner Join">
+<from tablename = "condition" alias = "">Patient_Identifier</from>
+<to tablename = "patient" alias = "">Identifier</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "procedure" alias = "">Condition_ConditionID</from>
+<to tablename = "condition" alias = "">ConditionID</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "staff" alias = "surgeon">staffID</from>
+<to tablename = "procedure" alias = "">planSugeon</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "staff" alias = "assistant">staffID</from>
+<to tablename = "procedure" alias = "">AssistantID</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "sidelist" alias = "">SidID</from>
+<to tablename = "condition" alias = "">SideID</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "sitelist" alias = "">SitListID</from>
+<to tablename = "condition" alias = "">SitID</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "diagnoslist" alias = "">DiagnListID</from>
+<to tablename = "condition" alias = "">DiagnListID</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "proclist" alias = "">ProclistID</from>
+<to tablename = "procedure" alias = "">PlanOperation</to>
+</join>
+</canvas>
+<grid>
+<column id="1">
+<table tablename="patient"></table>
+<field>URNumber</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="2">
+<table tablename="patient"></table>
+<field>Surname</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="3">
+<table tablename="patient"></table>
+<field>FirstName</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="4">
+<table tablename="patient"></table>
+<field>DOB</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="5">
+<table tablename="diagnoslist"></table>
+<field>Diagnos</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="6">
+<table tablename="proclist"></table>
+<field>Proc</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="7">
+<table tablename="procedure"></table>
+<field>planDate</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="8">
+<table tablename="procedure"></table>
+<field>planTime</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="9">
+<table tablename="staff">surgeon</table>
+<field>staffInit</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="10">
+<table tablename="staff">assistant</table>
+<field>staffInit</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="11">
+<table tablename="sidelist"></table>
+<field>Sid</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+</grid>
+</querybuilder>
